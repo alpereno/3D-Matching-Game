@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, maxRayDistance, thingMask, QueryTriggerInteraction.Collide))
         {
             //print(hit.collider.name);
+            // you can do selection effect here
+
         }
     }
 
