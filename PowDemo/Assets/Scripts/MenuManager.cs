@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem smokeParticle;
     [SerializeField] private GameObject optionsMenuHolder;
 
     [SerializeField] private Toggle[] resToggles;
@@ -15,6 +16,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        smokeParticle.Play();
         activeScreenResolutionIndex = PlayerPrefs.GetInt("screen resolution index");
         bool isFullscreen = (PlayerPrefs.GetInt("fullscreen") == 1) ? true : false;
 
@@ -28,6 +30,11 @@ public class MenuManager : MonoBehaviour
     public void quit()
     {
         Application.Quit();
+    }
+
+    public void startNewGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void setScreenResolution(int i)
