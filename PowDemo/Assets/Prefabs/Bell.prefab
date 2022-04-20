@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 8775143540290018552}
   - component: {fileID: 5649846116641133405}
   - component: {fileID: 7605663130253993879}
+  - component: {fileID: 2179452726189700158}
   - component: {fileID: 8254044931912140355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +83,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2179452726189700158
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254044931912140354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000001, z: 1.0000001}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8254044931912140355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,4 +109,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingName: Bell
-  piece: 12

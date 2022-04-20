@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5035424815057135645}
   - component: {fileID: 8236722690030167992}
   - component: {fileID: 6172817623478506354}
+  - component: {fileID: 5694377094058271186}
   - component: {fileID: 5668550460678255264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +83,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5694377094058271186
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5668550460678255271}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000001, z: 1.0000001}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5668550460678255264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,4 +109,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingName: Bottle
-  piece: 9

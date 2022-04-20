@@ -6,11 +6,33 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mouseSensitivityX = 250f;
     [SerializeField] private float mouseSensitivityY = 250f;
     [SerializeField] private Transform spawnerObject;
+    [SerializeField] private LayerMask thingMask;
+    Camera viewCamera;
+    float maxRayDistance = 100;
+    Color defaultColor;
+    Color yellowColor;
+
+    private void Start()
+    {
+        viewCamera = Camera.main;
+        yellowColor = Color.yellow;
+    }
 
     private void Update()
     {
         mouseRotateInputY();
         mouseRotateInputX();
+        createAimRay();
+    }
+
+    private void createAimRay()
+    {
+        Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;        
+        if (Physics.Raycast(ray, out hit, maxRayDistance, thingMask, QueryTriggerInteraction.Collide))
+        {
+            //print(hit.collider.name);
+        }
     }
 
     private void mouseRotateInputY()

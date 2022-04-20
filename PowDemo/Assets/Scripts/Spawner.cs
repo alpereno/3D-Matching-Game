@@ -54,13 +54,13 @@ public class Spawner : MonoBehaviour
             // oluşacak eleman sayısı yeniden düzenlenmeli
             // son eleman olup eksik oluşacak çıkarsa tam 63 olacak şekilde, oluşacak sayı oluşan ile toplandığında 63den fazlaysa
             // tam 63 olacak şekilde düzenlenmeli
-            print("stuff factor *3 = " + stuffFactor * 3);
+            //print("stuff factor *3 = " + stuffFactor * 3); //******************
             if (thingIndex == things.Length - 1 || stuffFactor * 3 > remainingStuffNumber)
             {
                 stuffFactor = remainingStuffNumber / 3;
             }
             stuffCount = stuffFactor * 3;
-            print("esas stuff factor * 3 = " + stuffFactor * 3);
+            //print("esas stuff factor * 3 = " + stuffFactor * 3); //*******************
             for (int i = 0; i < stuffCount; i++)
             {
                 Thing spawnedObject = Instantiate(things[thingIndex], availablePoss[index], Quaternion.identity);
