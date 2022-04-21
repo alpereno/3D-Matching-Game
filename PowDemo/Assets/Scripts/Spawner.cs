@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    //[SerializeField] private Stuff[] stuffs;
     [SerializeField] private Transform cubePrefab;
     [SerializeField] private Thing[] things;
     Vector3[] availablePoss;
@@ -18,42 +17,33 @@ public class Spawner : MonoBehaviour
     {
         keepSpawn = true;
         availablePoss = new Vector3[64];
-        fillArray();
-        //printArray();
-        shuffleArray();
-        //printArray();
 
+        fillArray();
+        shuffleArray();
         createObject();
     }
-                            // yorum satırları proje sonunda ingilizceye çevrilip, yeniden düzenlenecektir.
 
     // 4x4x4 şeklinde belirli prefablardan (avakado, zil, kitap şişe vs) küp oluşturuyor, bu prefabların sayısı random olarak
     // oluşuyor (istenilirse classlardan "piece" sayısı aktif edilip aşağıdaki bazı yorum satırları açılabilir)
     // oluşan random sayısı 63ü geçmeyecek şekilde ve ve son oluşacak prefabın sayısı random sayı ile eksik çıkarsa
     // 63 e tamamlayacak şekilde yeniden düzenleniyor.
     // ileride farklı işlemler yapılacağından referans tutabilmesi için base class şeklinde instantiate edilmiştir.
-    // pozisyonlarının random olması için fisher yates algoritmasını baz alıp, onu da uyarladım.
+    // pozisyonlarının random olması için fisher yates algoritması baz alınıp, uyarlanmıştır.
 
     void createObject()
     {
-        //for (int i = 0; i < 64; i++)
-        //{
-        //    //Transform cubeObject = Instantiate(cubePrefab, availablePoss[i], Quaternion.identity);
-        //    //cubeObject.transform.parent = transform;
-        //}
         remainingStuffNumber = 63;
-        int index = 0;  // aynı yerde oluşmasın diye avacado carrot falan her forda 0 dan başlasaydı değer shuffle arayında
-                        // hep 0 dan başlayarak kaç tane varsa o kadar ilerliyordu yani birbirlerinin üzerlerine oluşturuluyordu
+        int index = 0;
 
         while (keepSpawn)
         {
             stuffFactor = (int)(Random.Range(0, 6));    // son eleman hariç en fazla bir elemandan 18 tane olsun istedim
-            //print("init "+ remainingStuffNumber);
 
             // eğer son elemandaysak veya oluşacak eleman sayısı ile oluşan eleman sayısı toplamı kalan elemanlardan fazlaysa
             // oluşacak eleman sayısı yeniden düzenlenmeli
             // son eleman olup eksik oluşacak çıkarsa tam 63 olacak şekilde, oluşacak sayı oluşan ile toplandığında 63den fazlaysa
             // tam 63 olacak şekilde düzenlenmeli
+
             //print("stuff factor *3 = " + stuffFactor * 3); //******************
             if (thingIndex == things.Length - 1 || stuffFactor * 3 > remainingStuffNumber)
             {
@@ -66,17 +56,8 @@ public class Spawner : MonoBehaviour
                 Thing spawnedObject = Instantiate(things[thingIndex], availablePoss[index], Quaternion.identity);
                 spawnedObject.transform.parent = transform;
                 remainingStuffNumber--;
-                //print(remainingStuffNumber);
                 index++;
             }
-
-            //for (int i = 0; i < things[thingIndex].piece; i++)
-            //{
-            //    Thing spawnedObject = Instantiate(things[thingIndex], availablePoss[index], Quaternion.identity);
-            //    spawnedObject.transform.parent = transform;
-            //    remainingStuffNumber--;
-            //    index++;
-            //}
             if (thingIndex == things.Length - 1)
             {
                 keepSpawn = false;
