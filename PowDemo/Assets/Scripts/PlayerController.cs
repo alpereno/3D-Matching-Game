@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mouseSensitivityY = 250f;
     [SerializeField] private Transform spawnerObject;
     [SerializeField] private LayerMask thingMask;
+    bool inputActive = true;
     Camera viewCamera;
     float maxRayDistance = 100;
     Color defaultColor;
@@ -14,15 +15,19 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        Inventory.instance.onGameOver += onGameOver;
         viewCamera = Camera.main;
         yellowColor = Color.yellow;
     }
 
     private void Update()
     {
-        mouseRotateInputY();
-        mouseRotateInputX();
-        createAimRay();
+        if (inputActive)
+        {
+            mouseRotateInputY();
+            mouseRotateInputX();
+            createAimRay();
+        }
     }
 
     private void createAimRay()
@@ -31,9 +36,17 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;        
         if (Physics.Raycast(ray, out hit, maxRayDistance, thingMask, QueryTriggerInteraction.Collide))
         {
-            //print(hit.collider.name);
+            
             // you can do selection effect here
 
+            if (Input.GetMouseButtonDown(0))
+            {
+                Thing t = hit.collider.GetComponent<Thing>();
+                if (t != null)
+                {
+                    t.interact();
+                }
+            }
         }
     }
 
@@ -41,7 +54,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            // left right mouse
+            // mouse left right 
             Vector3 mouseInputX = Vector3.down * Input.GetAxis("Mouse X") * mouseSensitivityX;
             rotatePlayerY(mouseInputX);
         }
@@ -63,5 +76,9 @@ public class PlayerController : MonoBehaviour
     void rotatePlayerX(Vector3 mouseInputX)
     {
         spawnerObject.Rotate(mouseInputX * Time.deltaTime, Space.World);
+    }
+
+    void onGameOver() {
+        inputActive = false;
     }
 }
