@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingName: Avacado
+  icon: {fileID: 21300000, guid: 01a97c5ce74ef404b903c9d47e8c60e4, type: 3}

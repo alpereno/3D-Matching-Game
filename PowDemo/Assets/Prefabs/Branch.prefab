@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingName: Branch
+  icon: {fileID: 21300000, guid: db27b8c85af90704a975ebba6929d407, type: 3}

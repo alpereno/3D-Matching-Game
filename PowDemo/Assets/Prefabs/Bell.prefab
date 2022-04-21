@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingName: Bell
+  icon: {fileID: 21300000, guid: 44988ec9a556d0a4db6c0a08c7305833, type: 3}

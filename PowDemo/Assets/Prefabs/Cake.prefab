@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingName: Cake
+  icon: {fileID: 21300000, guid: d5c20164862d83541a24d212ca4df440, type: 3}

@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingName: Carrot
+  icon: {fileID: 21300000, guid: 3b76072d030826e468ecbb676a4631e4, type: 3}
