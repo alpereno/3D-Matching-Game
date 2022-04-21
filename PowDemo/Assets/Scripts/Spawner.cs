@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
 
         while (keepSpawn)
         {
-            stuffFactor = (int)(Random.Range(0, 6));    // son eleman hariç en fazla bir elemandan 18 tane olsun istedim
+            stuffFactor = (int)(Random.Range(0, 4));    // son eleman hariç en fazla bir elemandan 12 tane olsun istedim
 
             // eğer son elemandaysak veya oluşacak eleman sayısı ile oluşan eleman sayısı toplamı kalan elemanlardan fazlaysa
             // oluşacak eleman sayısı yeniden düzenlenmeli
