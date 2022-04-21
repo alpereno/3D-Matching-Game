@@ -11,8 +11,11 @@ ScriptsOnlyBuild:
     - Carrot
     - Cherry
     - Inventory
+    - InventorySlot
+    - InventoryUI
     - MenuManager
     - PlayerController
+    - ScoreKeeper
     - Spawner
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -85,49 +88,55 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1748}
     - Class: 114
-      Script: {instanceID: 1856}
+      Script: {instanceID: 1842}
     - Class: 114
-      Script: {instanceID: 2026}
+      Script: {instanceID: 1858}
     - Class: 114
-      Script: {instanceID: 2324}
+      Script: {instanceID: 2028}
     - Class: 114
-      Script: {instanceID: 2436}
+      Script: {instanceID: 2326}
     - Class: 114
-      Script: {instanceID: 2478}
+      Script: {instanceID: 2390}
     - Class: 114
-      Script: {instanceID: 2602}
+      Script: {instanceID: 2440}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2482}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2606}
     - Class: 114
-      Script: {instanceID: 2858}
+      Script: {instanceID: 2778}
     - Class: 114
-      Script: {instanceID: 2872}
+      Script: {instanceID: 2790}
     - Class: 114
-      Script: {instanceID: 2926}
+      Script: {instanceID: 2824}
     - Class: 114
-      Script: {instanceID: 3280}
+      Script: {instanceID: 2864}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 3796}
+      Script: {instanceID: 2900}
     - Class: 114
-      Script: {instanceID: 3822}
+      Script: {instanceID: 2934}
     - Class: 114
-      Script: {instanceID: 3918}
+      Script: {instanceID: 3288}
     - Class: 114
-      Script: {instanceID: 4042}
+      Script: {instanceID: 3504}
     - Class: 114
-      Script: {instanceID: 4088}
+      Script: {instanceID: 3804}
     - Class: 114
-      Script: {instanceID: 4320}
+      Script: {instanceID: 3830}
     - Class: 114
-      Script: {instanceID: 4422}
+      Script: {instanceID: 3926}
     - Class: 114
-      Script: {instanceID: 4508}
+      Script: {instanceID: 4050}
     - Class: 114
-      Script: {instanceID: 16352}
+      Script: {instanceID: 4096}
+    - Class: 114
+      Script: {instanceID: 4328}
+    - Class: 114
+      Script: {instanceID: 4430}
+    - Class: 114
+      Script: {instanceID: 4516}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -219,7 +228,7 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: a2c9a31e01f3ccb5bac53372571eaddd
+      Hash: f333146703697c4d204f38397340caf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Cherry
@@ -237,7 +246,13 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: a2c9a31e01f3ccb5bac53372571eaddd
+      Hash: 1735a1494337e9af6e597da0859a8ff2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Inventory
+  - hash:
+      serializedVersion: 2
+      Hash: f333146703697c4d204f38397340caf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Avacado
@@ -277,6 +292,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: a1bf635396aab30e2e06177ccab020a6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InventorySlot
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -351,7 +372,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: a2c9a31e01f3ccb5bac53372571eaddd
+      Hash: f333146703697c4d204f38397340caf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Cake
@@ -381,6 +402,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 660f64d63dc164156bdc7498c86ba0da
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InventoryUI
+  - hash:
+      serializedVersion: 2
       Hash: 8e6ceabfd38a184413d69b7db56c89cc
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
@@ -399,7 +426,13 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: a2c9a31e01f3ccb5bac53372571eaddd
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoreKeeper
+  - hash:
+      serializedVersion: 2
+      Hash: f333146703697c4d204f38397340caf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Branch
@@ -429,7 +462,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: a2c9a31e01f3ccb5bac53372571eaddd
+      Hash: f333146703697c4d204f38397340caf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Thing
@@ -477,7 +510,7 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: 554b0d9041fe8f318bf52b487b2c123a
+      Hash: 90b34c781e907bffbc89c38052aa6bbd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager
@@ -519,7 +552,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: a2c9a31e01f3ccb5bac53372571eaddd
+      Hash: f333146703697c4d204f38397340caf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bell
@@ -573,7 +606,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: a2c9a31e01f3ccb5bac53372571eaddd
+      Hash: f333146703697c4d204f38397340caf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bottle
@@ -603,7 +636,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: a2c9a31e01f3ccb5bac53372571eaddd
+      Hash: f333146703697c4d204f38397340caf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Book
@@ -621,7 +654,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: a2c9a31e01f3ccb5bac53372571eaddd
+      Hash: f333146703697c4d204f38397340caf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Blueberry
@@ -651,16 +684,10 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: a2c9a31e01f3ccb5bac53372571eaddd
+      Hash: f333146703697c4d204f38397340caf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Carrot
-  - hash:
-      serializedVersion: 2
-      Hash: 1735a1494337e9af6e597da0859a8ff2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Inventory
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
