@@ -2035,7 +2035,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 0}
+  m_BackGroundColor: {r: 0.38047346, g: 0.5845056, b: 0.8490566, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2383,7 +2383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f771bcaa900d6054e9efc87a734bdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubePrefab: {fileID: -8679921383154817045, guid: dd024f3bf76e3d046aee1a76b988190b, type: 3}
   things:
   - {fileID: 616365391455433918, guid: 556393a9c2c5c49449d5984416deea63, type: 3}
   - {fileID: 8254044931912140355, guid: dd839d0d03ed39342b2b2591fa6403a0, type: 3}
