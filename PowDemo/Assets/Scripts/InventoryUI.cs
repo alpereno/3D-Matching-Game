@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -20,18 +20,21 @@ public class InventoryUI : MonoBehaviour
     }
 
     void updateInventoryUI() {                          // updates inventory ui with the help of InventorySlot
-        //print("updating inventory ui");
-        //for (int i = 0; i < slots.Length; i++)
-        //{
-        //    if (i<7)
-        //    {
-        //        slots[i].addItem(inventory.things[i]);
-        //    }
-        //    else
-        //    {
-        //        slots[1].clearSlot();
-        //    }
-        //}
+        print("updating inventory ui");
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (i < inventory.things.Count)
+            {
+                //print("hata oncesi");
+                //slots[i].addItem(inventory.things[i]);
+                //print("print hata sonrası");
+                slots[i].addItemIcon(inventory.things[i].icon);
+            }
+            else
+            {
+                slots[1].clearSlot();
+            }
+        }
         updateStarText();
     }
 

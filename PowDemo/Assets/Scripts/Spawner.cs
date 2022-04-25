@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Transform cubePrefab;
     [SerializeField] private Thing[] things;
+
     Vector3[] availablePoss;
+
     bool keepSpawn;
-    int thingIndex;                         // things arrayindeki ilerlemeyi kayıtlı tutmak için
-    int stuffCount;
-    int stuffFactor;
+    int thingIndex;                         // things arrayindeki ilerlemeyi kayıtlı tutmak için (bir sonraki objeye geçiş)
+    int stuffCount;                         // o esnada oluşacak objenin toplam sayısı
+    int stuffFactor;                        // oluşacak objenin sayısı 3'ün kaç katı olacağını tutar
     int remainingStuffNumber;
 
     private void Start()
@@ -33,24 +34,22 @@ public class Spawner : MonoBehaviour
     void createObject()
     {
         remainingStuffNumber = 63;
-        int index = 0;
+        int index = 0;                      // karışık bir şekilde düzenlenmiş pozisyon dizisindeki ilerlemeyi kayıt etmek için
 
         while (keepSpawn)
         {
-            stuffFactor = (int)(Random.Range(0, 4));    // son eleman hariç en fazla bir elemandan 12 tane olsun istedim
+            stuffFactor = (int)(Random.Range(0, 4));    // son eleman hariç en fazla bir elemandan 9 tane olsun istedim
 
             // eğer son elemandaysak veya oluşacak eleman sayısı ile oluşan eleman sayısı toplamı kalan elemanlardan fazlaysa
             // oluşacak eleman sayısı yeniden düzenlenmeli
-            // son eleman olup eksik oluşacak çıkarsa tam 63 olacak şekilde, oluşacak sayı oluşan ile toplandığında 63den fazlaysa
-            // tam 63 olacak şekilde düzenlenmeli
+            // son eleman olup eksik oluşacak çıkarsa tam 63 olacak şekilde yeniden düzenlenmeli
 
-            //print("stuff factor *3 = " + stuffFactor * 3); //******************
             if (thingIndex == things.Length - 1 || stuffFactor * 3 > remainingStuffNumber)
             {
                 stuffFactor = remainingStuffNumber / 3;
             }
             stuffCount = stuffFactor * 3;
-            //print("esas stuff factor * 3 = " + stuffFactor * 3); //*******************
+
             for (int i = 0; i < stuffCount; i++)
             {
                 Thing spawnedObject = Instantiate(things[thingIndex], availablePoss[index], Quaternion.identity);

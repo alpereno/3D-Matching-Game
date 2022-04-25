@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 {
     public event System.Action onItemChanged;       // to update InventoryUI
     public event System.Action onGameOver;          // to deactive controller and gameOver
-    public event System.Action onMatching;
+    public event System.Action onMatching;          // to add score when onMatching
     public static Inventory instance;
 
     public List<Thing> things = new List<Thing>();

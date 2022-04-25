@@ -11,6 +11,9 @@ public class InventorySlot : MonoBehaviour
         thing = newThing;
         icon.sprite = thing.icon;
     }
+    public void addItemIcon(Sprite img) {
+        icon.sprite = img;
+    }
 
     public void clearSlot()
     {
