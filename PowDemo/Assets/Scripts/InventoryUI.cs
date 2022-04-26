@@ -28,11 +28,12 @@ public class InventoryUI : MonoBehaviour
                 //print("hata oncesi");
                 //slots[i].addItem(inventory.things[i]);
                 //print("print hata sonrası");
+                print("************" + i + " " + inventory.things[i].thingName);
                 slots[i].addItemIcon(inventory.things[i].icon);
             }
             else
             {
-                slots[1].clearSlot();
+                slots[i].clearSlot();
             }
         }
         updateStarText();
