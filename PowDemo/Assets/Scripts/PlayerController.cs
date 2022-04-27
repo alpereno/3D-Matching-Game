@@ -10,12 +10,13 @@ public class PlayerController : MonoBehaviour
     bool inputActive = true;
     Camera viewCamera;
     float maxRayDistance = 100;
+    Material selectedMat;
     Color defaultColor;
     Color yellowColor;
 
     private void Start()
-    {
-        Inventory.instance.onGameOver += onGameOver;
+    {   // OBSOLETE Event System Action
+        //Inventory.instance.onGameOver += onGameOver;
         viewCamera = Camera.main;
         yellowColor = Color.yellow;
     }
@@ -26,29 +27,65 @@ public class PlayerController : MonoBehaviour
         {
             mouseRotateInputY();
             mouseRotateInputX();
-            createAimRay();
+            //createAimRay();
+            mouseClickInput();
         }
     }
 
-    private void createAimRay()
+    void mouseClickInput()
     {
         Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;        
-        if (Physics.Raycast(ray, out hit, maxRayDistance, thingMask, QueryTriggerInteraction.Collide))
-        {
-            
-            // you can do selection effect here
+        RaycastHit hit;
+        //----------- selection effect------------
+        //if (Input.GetMouseButton(0))
+        //{
+        //    if (Physics.Raycast(ray, out hit, maxRayDistance, thingMask, QueryTriggerInteraction.Collide))
+        //    {
+        //        // selection effect
+        //        selectedMat = hit.collider.GetComponent<Renderer>().material;
+        //        defaultColor = selectedMat.color;
+        //        selectedMat.color = yellowColor;
+        //        print("----- selection effect, item name = " + hit.collider.name);
+        //    }
+        //}
 
-            if (Input.GetMouseButtonDown(0))
+        // hit can be null (generally). So we've to make another Physics.Raycast
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (Physics.Raycast(ray, out hit, maxRayDistance, thingMask, QueryTriggerInteraction.Collide))
             {
-                Thing t = hit.collider.GetComponent<Thing>();
-                if (t != null)
+                Thing objectThing = hit.collider.GetComponent<Thing>();
+                if (objectThing != null)
                 {
-                    t.interact();
+                    //selectedMat.color = defaultColor;
+                    objectThing.interact();
                 }
             }
         }
     }
+
+    // OBSOLETE selection
+    #region
+    //private void createAimRay()
+    //{
+    //    Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
+    //    RaycastHit hit;        
+    //    if (Physics.Raycast(ray, out hit, maxRayDistance, thingMask, QueryTriggerInteraction.Collide))
+    //    {
+
+    //        // you can do selection effect here
+
+    //        if (Input.GetMouseButtonDown(0))
+    //        {
+    //            Thing t = hit.collider.GetComponent<Thing>();
+    //            if (t != null)
+    //            {
+    //                t.interact();
+    //            }
+    //        }
+    //    }
+    //}
+    #endregion
 
     private void mouseRotateInputY()
     {

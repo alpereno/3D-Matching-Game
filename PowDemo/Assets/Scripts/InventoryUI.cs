@@ -19,16 +19,12 @@ public class InventoryUI : MonoBehaviour
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
     }
 
+    // we have to access current index in things so why I couldn't use ScriptableObject Event System right there
     void updateInventoryUI() {                          // updates inventory ui with the help of InventorySlot
-        print("updating inventory ui");
         for (int i = 0; i < slots.Length; i++)
         {
             if (i < inventory.things.Count)
             {
-                //print("hata oncesi");
-                //slots[i].addItem(inventory.things[i]);
-                //print("print hata sonrası");
-                print("************" + i + " " + inventory.things[i].thingName);
                 slots[i].addItemIcon(inventory.things[i].icon);
             }
             else

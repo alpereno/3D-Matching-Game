@@ -20,8 +20,9 @@ public class MenuManager : MonoBehaviour
     int activeScreenResolutionIndex;
 
     private void Start()
-    {
-        Inventory.instance.onGameOver += gameOver;
+    {   // OBSOLETE Event System Action
+        //Inventory.instance.onGameOver += gameOver;
+
         smokeParticle.Play();
         activeScreenResolutionIndex = PlayerPrefs.GetInt("screen resolution index");
         bool isFullscreen = (PlayerPrefs.GetInt("fullscreen") == 1) ? true : false;

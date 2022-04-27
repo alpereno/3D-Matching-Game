@@ -10,12 +10,13 @@ public class ScoreKeeper : MonoBehaviour
     float streakExpiryTime = 3;
 
     private void Start()
-    {
-        Inventory.instance.onMatching += onMatching;
+    {   // OBSOLETE Event System Action
+        //Inventory.instance.onMatching += onMatching;
+
         score = 0;
     }
 
-    void onMatching() {
+    public void onMatching() {
         if (Time.time < lastMatchingTime+streakExpiryTime)
         {
             streakCount++;

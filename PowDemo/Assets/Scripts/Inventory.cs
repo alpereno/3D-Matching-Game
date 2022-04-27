@@ -6,10 +6,12 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public event System.Action onItemChanged;       // to update InventoryUI
-    public event System.Action onGameOver;          // to deactive controller and gameOver
-    public event System.Action onMatching;          // to add score when onMatching
+    //public event System.Action onGameOver;          // to deactive controller and gameOver
+    //public event System.Action onMatching;          // to add score when onMatching
     public static Inventory instance;
 
+    public GameEvent onMatching;
+    public GameEvent onGameOver;
     public List<Thing> things = new List<Thing>();
     private int slotNumber = 7;
 
@@ -36,17 +38,19 @@ public class Inventory : MonoBehaviour
                 if (inventoryItem .GetType() == thingToAdd.GetType())
                 {
                     i++;
-                    print(inventoryItem.GetType()+" " + i);
                 }
             }
             if (i == 3)                                 // if there are 3 object of the same type destroys them and gives points
             {
                 //print("item to be remove = " + thingToAdd.thingName);
                 removeThings(thingToAdd);
-                if (onMatching != null)
-                {
-                    onMatching();
-                }
+                onMatching.raise();
+
+                //  OBSOLETE System.Event onMatching
+                //if (onMatching != null)
+                //{
+                //    onMatching();
+                //}
             }
 
             if (onItemChanged != null)
@@ -58,10 +62,12 @@ public class Inventory : MonoBehaviour
         {
             // game over event
             print("Index out of range and things count = " + things.Count);
-            if (onGameOver != null)
-            {
-                onGameOver();
-            }
+            // OBSOLETE System Action Event onGameOver
+            //if (onGameOver != null)
+            //{
+            //    onGameOver();
+            //}
+            onGameOver.raise();
             return;
         }
     }
@@ -77,7 +83,6 @@ public class Inventory : MonoBehaviour
             if (item.GetType() == thingToRemove.GetType())
             {
                 indexes[i] = things.IndexOf(thingToRemove);
-                // print("silinecek indisler = " + i);
                 indexofRemove[x] = i;
                 x++;
                 i++;

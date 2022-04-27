@@ -2113,6 +2113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf370edce812d1428b75583062dc935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onMatching: {fileID: 11400000, guid: eea5b35aca494b24fb6c156d04a355ae, type: 2}
+  onGameOver: {fileID: 11400000, guid: 2b932fb67132a734cb876107866c80d9, type: 2}
   things: []
 --- !u!1 &1019738799
 GameObject:
@@ -3066,6 +3068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1286350518}
   - component: {fileID: 1286350517}
+  - component: {fileID: 1286350519}
   m_Layer: 0
   m_Name: Score Keeper
   m_TagString: Untagged
@@ -3099,6 +3102,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1286350519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286350516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f1cf4dae09d21469e61404c8d6cdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: eea5b35aca494b24fb6c156d04a355ae, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1286350517}
+        m_TargetAssemblyTypeName: ScoreKeeper, Assembly-CSharp
+        m_MethodName: onMatching
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1305934031
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,6 +4215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2061343881}
   - component: {fileID: 2061343880}
+  - component: {fileID: 2061343882}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -4227,6 +4259,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2061343882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061343879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f1cf4dae09d21469e61404c8d6cdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 2b932fb67132a734cb876107866c80d9, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2061343880}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: gameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2072460986
 GameObject:
   m_ObjectHideFlags: 0
