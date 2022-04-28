@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
         spawnerObject.Rotate(mouseInputX * Time.deltaTime, Space.World);
     }
 
-    void onGameOver() {
+    public void onGameOver() {
         inputActive = false;
     }
 }
