@@ -41,7 +41,8 @@ public class MenuManager : MonoBehaviour
 
     public void startNewGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        SceneManager.LoadSceneAsync("MenuScene", LoadSceneMode.Additive);
     }
 
     public void gameOver()
