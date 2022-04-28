@@ -9,7 +9,6 @@ public class ScenesData : ScriptableObject
     public GameScene gameScene;
     public GameScene menuScene;
 
-
     public void startNewGame()
     {
         SceneManager.LoadSceneAsync(gameScene.sceneName);

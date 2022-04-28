@@ -14,12 +14,17 @@ ScriptsOnlyBuild:
     - Cupcake
     - Diamond
     - Donut
+    - GameEvent
+    - GameEventListener
+    - GameScene
     - IceCream
     - Inventory
     - InventorySlot
     - InventoryUI
     - MenuManager
     - PlayerController
+    - SceneLoader
+    - ScenesData
     - ScoreKeeper
     - Spawner
     Unity.Rider.Editor.dll:
@@ -51,7 +56,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Toggle
     - UnityEngine.UI.ToggleGroup
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/GameScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -87,71 +92,75 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 1660}
+      Script: {instanceID: 1662}
     - Class: 114
-      Script: {instanceID: 1686}
+      Script: {instanceID: 1688}
     - Class: 114
-      Script: {instanceID: 1748}
+      Script: {instanceID: 1750}
     - Class: 114
-      Script: {instanceID: 1842}
+      Script: {instanceID: 1844}
     - Class: 114
-      Script: {instanceID: 1858}
+      Script: {instanceID: 1860}
     - Class: 114
-      Script: {instanceID: 2028}
+      Script: {instanceID: 2030}
     - Class: 114
-      Script: {instanceID: 2312}
+      Script: {instanceID: 2314}
     - Class: 114
-      Script: {instanceID: 2328}
+      Script: {instanceID: 2330}
     - Class: 114
-      Script: {instanceID: 2392}
+      Script: {instanceID: 2394}
     - Class: 114
-      Script: {instanceID: 2420}
+      Script: {instanceID: 2422}
     - Class: 114
-      Script: {instanceID: 2444}
+      Script: {instanceID: 2446}
     - Class: 114
-      Script: {instanceID: 2486}
+      Script: {instanceID: 2488}
     - Class: 114
-      Script: {instanceID: 2610}
+      Script: {instanceID: 2612}
     - Class: 114
-      Script: {instanceID: 2782}
+      Script: {instanceID: 2784}
     - Class: 114
-      Script: {instanceID: 2794}
+      Script: {instanceID: 2796}
     - Class: 114
-      Script: {instanceID: 2828}
+      Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 2868}
+      Script: {instanceID: 2870}
     - Class: 114
-      Script: {instanceID: 2882}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 2904}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 2938}
+      Script: {instanceID: 2940}
     - Class: 114
-      Script: {instanceID: 3088}
+      Script: {instanceID: 3090}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 3512}
     - Class: 114
-      Script: {instanceID: 3510}
+      Script: {instanceID: 3594}
     - Class: 114
-      Script: {instanceID: 3810}
+      Script: {instanceID: 3814}
     - Class: 114
-      Script: {instanceID: 3836}
+      Script: {instanceID: 3840}
     - Class: 114
-      Script: {instanceID: 3932}
+      Script: {instanceID: 3936}
     - Class: 114
-      Script: {instanceID: 3998}
+      Script: {instanceID: 3968}
     - Class: 114
-      Script: {instanceID: 4058}
+      Script: {instanceID: 4004}
     - Class: 114
-      Script: {instanceID: 4104}
+      Script: {instanceID: 4064}
     - Class: 114
-      Script: {instanceID: 4282}
+      Script: {instanceID: 4110}
     - Class: 114
-      Script: {instanceID: 4338}
+      Script: {instanceID: 4288}
     - Class: 114
-      Script: {instanceID: 4440}
+      Script: {instanceID: 4346}
     - Class: 114
-      Script: {instanceID: 4526}
+      Script: {instanceID: 4448}
+    - Class: 114
+      Script: {instanceID: 4534}
+    - Class: 114
+      Script: {instanceID: 253190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -163,6 +172,75 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    Assets/Scenes/MenuScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1510}
+    - Class: 114
+      Script: {instanceID: 1604}
+    - Class: 114
+      Script: {instanceID: 1620}
+    - Class: 114
+      Script: {instanceID: 1750}
+    - Class: 114
+      Script: {instanceID: 2330}
+    - Class: 114
+      Script: {instanceID: 2394}
+    - Class: 114
+      Script: {instanceID: 2446}
+    - Class: 114
+      Script: {instanceID: 2488}
+    - Class: 114
+      Script: {instanceID: 2612}
+    - Class: 114
+      Script: {instanceID: 2796}
+    - Class: 114
+      Script: {instanceID: 2830}
+    - Class: 114
+      Script: {instanceID: 2870}
+    - Class: 114
+      Script: {instanceID: 2884}
+    - Class: 114
+      Script: {instanceID: 3296}
+    - Class: 114
+      Script: {instanceID: 3594}
+    - Class: 114
+      Script: {instanceID: 3968}
+    - Class: 114
+      Script: {instanceID: 4308}
+    - Class: 114
+      Script: {instanceID: 4448}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -213,13 +291,19 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
+      Hash: 4721f3701219a9b0d49c724e00d105c2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameScene
+  - hash:
+      serializedVersion: 2
       Hash: 6bc76e17f0d5e93f3eea7f5a2fe227f3
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 7bb2b16bcd6a600e1e9610a7bbbd263b
+      Hash: 7d0dc39f846203ee80fe370c08ed3690
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spawner
@@ -261,7 +345,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 1735a1494337e9af6e597da0859a8ff2
+      Hash: ec4245aa794e8496b63336519aa9a159
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Inventory
@@ -543,7 +627,7 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: 90b34c781e907bffbc89c38052aa6bbd
+      Hash: 27db030360c38a4f14e1d6180d609047
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager
@@ -595,6 +679,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 59ddc3079bdac65e10e330476b5ea812
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameEventListener
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -663,6 +753,12 @@ ScriptsOnlyBuild:
     className: PlayerController
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameEvent
+  - hash:
+      serializedVersion: 2
       Hash: 6980e81ddc615a861309d2d659cc3760
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -699,6 +795,12 @@ ScriptsOnlyBuild:
     className: Cupcake
   - hash:
       serializedVersion: 2
+      Hash: 6189b3cf3b474fc2d58261c209db703e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScenesData
+  - hash:
+      serializedVersion: 2
       Hash: f333146703697c4d204f38397340caf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -733,7 +835,14 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Carrot
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneLoader
   platform: 19
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
-  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/pow/WindowsBuild/PowDemo.exe"
+  - Assets/Scenes/GameScene.unity
+  - Assets/Scenes/MenuScene.unity
+  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/New folder/PowDemo.exe"
