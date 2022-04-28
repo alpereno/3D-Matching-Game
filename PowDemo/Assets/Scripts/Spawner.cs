@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Thing[] things;
+    [SerializeField] private ParticleSystem smokeParticle;
 
     Vector3[] availablePoss;
 
@@ -18,10 +19,11 @@ public class Spawner : MonoBehaviour
     {
         keepSpawn = true;
         availablePoss = new Vector3[64];
-
+        smokeParticle.Play();
         fillArray();
         shuffleArray();
         createObject();
+
     }
 
     // 4x4x4 şeklinde belirli prefablardan (avakado, zil, kitap şişe vs) küp oluşturuyor, bu prefabların sayısı random olarak
