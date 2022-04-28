@@ -31,16 +31,18 @@ public class MenuManager : MonoBehaviour
         fullscreenToggle.isOn = isFullscreen;
     }
 
-    public void quit()
-    {
-        Application.Quit();
-    }
+    //                  OBSOLETE "SceneData" Scriptable Object takes over this task
+    //public void quit()
+    //{
+    //    Application.Quit();
+    //}
 
-    public void startNewGame()
-    {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-        SceneManager.LoadSceneAsync("MenuScene", LoadSceneMode.Additive);
-    }
+    //                  OBSOLETE "SceneData" Scriptable Object takes over this task
+    //public void startNewGame()
+    //{
+    //    SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+    //    SceneManager.LoadSceneAsync("MenuScene", LoadSceneMode.Additive);
+    //}
 
     public void gameOver()
     {
