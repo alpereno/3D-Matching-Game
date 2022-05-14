@@ -5,16 +5,19 @@ public class PlayerController : MonoBehaviour
 {
     //[SerializeField] private float mouseSensitivityX = 250f;
     //[SerializeField] private float mouseSensitivityY = 250f;
-    [SerializeField] private float touchSensitivityX = 30;
-    [SerializeField] private float touchSensitivityY = 30;
+    [SerializeField] private float touchSensitivityX = 200;
+    [SerializeField] private float touchSensitivityY = 200;
 
     [SerializeField] private Transform spawnerObject;
     [SerializeField] private LayerMask thingMask;
     bool inputActive = true;
     Camera viewCamera;
     float maxRayDistance = 100;
-    float firstTouchX;
-    float firstTouchY;
+    Vector2 firstTouchPoint;
+    Vector2 lastTouchPoint;
+    Vector2 differenceBetweenTwoPoints;
+    [SerializeField]
+    float selectThreshold = 25f;
     Material selectedMat;
     Color defaultColor;
     Color yellowColor;
@@ -38,6 +41,7 @@ public class PlayerController : MonoBehaviour
             rotateX();
             rotateY();
             mouseClickInput();
+            resetInputValues();
         }
     }
 
@@ -58,15 +62,18 @@ public class PlayerController : MonoBehaviour
         //}
 
         // hit can be null (generally). So we've to make another Physics.Raycast
-        if (Input.GetMouseButtonUp(0))
+        if (differenceBetweenTwoPoints.sqrMagnitude < selectThreshold * selectThreshold)
         {
-            if (Physics.Raycast(ray, out hit, maxRayDistance, thingMask, QueryTriggerInteraction.Collide))
+            if (Input.GetMouseButtonUp(0))
             {
-                Thing objectThing = hit.collider.GetComponent<Thing>();
-                if (objectThing != null)
+                if (Physics.Raycast(ray, out hit, maxRayDistance, thingMask, QueryTriggerInteraction.Collide))
                 {
-                    //selectedMat.color = defaultColor;
-                    objectThing.interact();
+                    Thing objectThing = hit.collider.GetComponent<Thing>();
+                    if (objectThing != null)
+                    {
+                        //selectedMat.color = defaultColor;
+                        objectThing.interact();
+                    }
                 }
             }
         }
@@ -74,36 +81,63 @@ public class PlayerController : MonoBehaviour
 
     void rotateY()
     {
-        Vector3 rotateVector = Vector3.zero;
+        //Vector3 rotateVector = Vector3.zero;
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    firstTouchX = Input.mousePosition.x;
+        //}
+        //else if (Input.GetMouseButton(0))
+        //{
+        //    float lastTouchX = Input.mousePosition.x;
+        //    float diff = lastTouchX - firstTouchX;
+        //    rotateVector = new Vector3(0, diff, 0) * Time.deltaTime;
+        //    firstTouchX = lastTouchX;
+        //    print(diff);
+        //}
+        //spawnerObject.Rotate(-rotateVector * touchSensitivityX, Space.World);
+        //if (Input.GetMouseButton(0))
+        //{
+        //    spawnerObject.Rotate(0, Input.GetAxis("Mouse Y") * touchSensitivityY * Time.deltaTime, 0, Space.World);
+        //}
         if (Input.GetMouseButtonDown(0))
         {
-            firstTouchX = Input.mousePosition.x;
+            firstTouchPoint.y = Input.mousePosition.y;
         }
-        else if (Input.GetMouseButton(0))
+
+        if (Input.GetMouseButton(0))
         {
-            float lastTouchX = Input.mousePosition.x;
-            float diff = lastTouchX - firstTouchX;
-            rotateVector = new Vector3(0, diff, 0) * Time.deltaTime;
-            firstTouchX = lastTouchX;
+            Vector3 rotateVector;
+            lastTouchPoint.y = Input.mousePosition.y;
+            differenceBetweenTwoPoints.y = Mathf.Abs(lastTouchPoint.y - firstTouchPoint.y);
+            rotateVector = new Vector3(Input.GetAxis("Mouse Y") * touchSensitivityY, 0, 0);
+            spawnerObject.Rotate(rotateVector * Time.deltaTime, Space.World);
         }
-        spawnerObject.Rotate(-rotateVector * touchSensitivityX, Space.World);
     }
 
     void rotateX()
     {
-        Vector3 rotateVector = Vector3.zero;
         if (Input.GetMouseButtonDown(0))
         {
-            firstTouchY = Input.mousePosition.y;
+            firstTouchPoint.x = Input.mousePosition.x;
         }
-        else if (Input.GetMouseButton(0))
+
+        if (Input.GetMouseButton(0))
         {
-            float lastTouchY = Input.mousePosition.y;
-            float diff = lastTouchY - firstTouchY;
-            rotateVector = new Vector3(diff, 0, 0) * Time.deltaTime;
-            firstTouchY = lastTouchY;
+            Vector3 rotateVector;
+            lastTouchPoint.x = Input.mousePosition.x;
+            differenceBetweenTwoPoints.x = Mathf.Abs(lastTouchPoint.x - firstTouchPoint.x);
+            rotateVector = new Vector3(0, Input.GetAxis("Mouse X") * -touchSensitivityX, 0);
+            spawnerObject.Rotate(rotateVector * Time.deltaTime, Space.World);
         }
-        spawnerObject.Rotate(rotateVector * touchSensitivityY, Space.World);
+    }
+
+    void resetInputValues()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            firstTouchPoint = Vector2.zero;
+            lastTouchPoint = Vector2.zero;
+        }
     }
 
     // OBSOLETE selection

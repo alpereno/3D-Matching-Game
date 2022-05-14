@@ -2096,12 +2096,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0075c6789c2d86d4497538e9d3639d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivityX: 400
-  mouseSensitivityY: 400
+  touchSensitivityX: 200
+  touchSensitivityY: 200
   spawnerObject: {fileID: 1130373290}
   thingMask:
     serializedVersion: 2
     m_Bits: 64
+  selectThreshold: 25
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
