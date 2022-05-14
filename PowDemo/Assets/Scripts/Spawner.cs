@@ -51,6 +51,8 @@ public class Spawner : MonoBehaviour
                 stuffFactor = remainingStuffNumber / 3;
             }
             stuffCount = stuffFactor * 3;
+            // to see how many of which object are spawned
+            //print("things = " + things[thingIndex] + " " + stuffCount);
 
             for (int i = 0; i < stuffCount; i++)
             {
