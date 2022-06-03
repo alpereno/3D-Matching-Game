@@ -753,7 +753,7 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: 91872924ada6e54de7a0527fc447020a
+      Hash: 55bedc5b2758fe4913f0116257f0738f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -845,4 +845,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/GameScene.unity
   - Assets/Scenes/MenuScene.unity
-  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/androidBuild/test.apk"
+  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/pow/androidBuild/test.apk"
