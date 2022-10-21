@@ -1,4 +1,4 @@
-# PowDemo
+# 3D Matching Game
 
 (There are exe and apk files to play in windowsBuild and andoridBuild files in the repository.)
 
